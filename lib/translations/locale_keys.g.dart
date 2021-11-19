@@ -41,7 +41,7 @@ abstract class LocaleKeys {
   static const Profile = 'Profile';
   static const Follow_Our = 'Follow Our';
   static const Socials = 'Socials';
-  static const Email = 'Email';
+  static const Email = 'Contact';
   static const Password = 'Password';
   static const Home = 'Home';
   static const Setting = 'Setting';

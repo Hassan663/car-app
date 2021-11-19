@@ -2,6 +2,7 @@ import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/home/home_screen/model/model.dart';
 import 'package:car_app/ui/home/home_screen_2/model/model.dart';
 import 'package:car_app/ui/visit_detail/visit_detail.dart';
+import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,8 +11,12 @@ import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/src/public_ext.dart';
 
 class HistoryCard extends StatelessWidget {
+  final String carid;
+  final String cusid;
   const HistoryCard({
     Key? key,
+    required this.carid,
+    required this.cusid,
   }) : super(key: key);
 
   @override
@@ -19,7 +24,7 @@ class HistoryCard extends StatelessWidget {
     return Container(
       height: 400.h,
       child: ListView.builder(
-        itemCount: HomeScreen1CarData.data.length,
+        itemCount: DashBordModel.carVisitModel!.allVechileVisits.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(bottom: 30.0),
           child: Card(
@@ -52,42 +57,46 @@ class HistoryCard extends StatelessWidget {
                       CardTiles(
                         image: "assets/images/1.png",
                         title: LocaleKeys.Arrival_Date.tr(),
-                        subtitle: HomeScreen1CarData
-                            .data[index].last![0].arrivaldate!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].arrivalDate
+                            .toString(),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/Group 97.png",
                         title: LocaleKeys.Promise_Date.tr(),
-                        subtitle: HomeScreen1CarData
-                            .data[index].last![0].promisedate!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].promisedDate
+                            .toString(),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/1.png",
                         title: LocaleKeys.Delivery_Date.tr(),
-                        subtitle: HomeScreen1CarData
-                            .data[index].last![0].deliverydate!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].deliveryDate
+                            .toString(),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/1.png",
                         title: LocaleKeys.Insurance.tr(),
-                        subtitle:
-                            HomeScreen1CarData.data[index].last![0].Insurance!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].insurance,
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/Group 97.png",
                         title: LocaleKeys.Task.tr(),
-                        subtitle: HomeScreen1CarData.data[index].last![0].task!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].task,
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/Group 98.png",
                         title: LocaleKeys.Status.tr(),
-                        subtitle:
-                            HomeScreen1CarData.data[index].last![0].status!,
+                        subtitle: DashBordModel
+                            .carVisitModel!.allVechileVisits[index].status,
                         color: Color(0xffF48129),
                       ),
                       SizedBox(
@@ -100,7 +109,12 @@ class HistoryCard extends StatelessWidget {
                   children: [
                     Spacer(),
                     CustomButton(
-                      tap: () => AppRoutes.push(context, VisitDetail()),
+                      tap: () => AppRoutes.push(
+                          context,
+                          VisitDetail(
+                            cusid: cusid,
+                            carid: carid,
+                          )),
                     ),
                   ],
                 )
