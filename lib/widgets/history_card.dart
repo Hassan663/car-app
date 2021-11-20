@@ -57,25 +57,22 @@ class HistoryCard extends StatelessWidget {
                       CardTiles(
                         image: "assets/images/1.png",
                         title: LocaleKeys.Arrival_Date.tr(),
-                        subtitle: DashBordModel
-                            .carVisitModel!.allVechileVisits[index].arrivalDate
-                            .toString(),
+                        subtitle: convert(DashBordModel.carVisitModel!
+                            .allVechileVisits[index].arrivalDate),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/Group 97.png",
                         title: LocaleKeys.Promise_Date.tr(),
-                        subtitle: DashBordModel
-                            .carVisitModel!.allVechileVisits[index].promisedDate
-                            .toString(),
+                        subtitle: convert(DashBordModel.carVisitModel!
+                            .allVechileVisits[index].promisedDate),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
                         image: "assets/images/1.png",
                         title: LocaleKeys.Delivery_Date.tr(),
-                        subtitle: DashBordModel
-                            .carVisitModel!.allVechileVisits[index].deliveryDate
-                            .toString(),
+                        subtitle: convert(DashBordModel.carVisitModel!
+                            .allVechileVisits[index].deliveryDate),
                         color: Color(0xffF48129),
                       ),
                       CardTiles(
@@ -124,6 +121,10 @@ class HistoryCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String convert(DateTime d) {
+    return "${d.year.toString()}-${d.month.toString()}-${d.day.toString()}";
   }
 }
 

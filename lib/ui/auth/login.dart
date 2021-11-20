@@ -48,6 +48,8 @@ class _LoginState extends State<Login> {
     if (validateAndSaveLogin()) {
       Provider.of<ProfileProvider>(context, listen: false)
           .loginresponse(
+        // "0563437070",
+        // "123456",
         _contactController.text,
         _passwordController.text,
       )
@@ -95,7 +97,7 @@ class _LoginState extends State<Login> {
                     labelText: LocaleKeys.Email.tr(),
                     controller: _contactController,
                     color: AppColors.white_color,
-                    hintText: "Contact Number",
+                    hintText: "0563437070",
                     emptyValidationMessage: "Please Enter Contact Number"),
               ),
               SizedBox(
@@ -107,7 +109,7 @@ class _LoginState extends State<Login> {
                     labelText: LocaleKeys.Password.tr(),
                     color: AppColors.white_color,
                     controller: _passwordController,
-                    hintText: "Password",
+                    hintText: "123456",
                     emptyValidationMessage: "Please Enter password"),
               ),
               SizedBox(

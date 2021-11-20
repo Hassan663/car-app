@@ -1,6 +1,7 @@
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/contact_us/warning.dart';
 import 'package:car_app/utils/colors.dart';
+import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
 import 'package:car_app/utils/text_style.dart';
 import 'package:car_app/widgets/buttons.dart';
@@ -80,7 +81,7 @@ class _UserProfileState extends State<UserProfile> {
                             width: 10.w,
                           ),
                           Text(
-                            "USMAN",
+                            DashBordModel.customerData!.name.toString(),
                             style: largeGreyText,
                           )
                         ])),
@@ -176,7 +177,8 @@ class _UserProfileState extends State<UserProfile> {
                                     width: 15.w,
                                   ),
                                   Text(
-                                    "user123@gmail.com",
+                                    DashBordModel.customerData!.email
+                                        .toString(),
                                     style: userProfileText,
                                   ),
                                   // Spacer(),
@@ -199,7 +201,8 @@ class _UserProfileState extends State<UserProfile> {
                                     width: 15.w,
                                   ),
                                   Text(
-                                    "+923665448815",
+                                    DashBordModel.customerData!.contact
+                                        .toString(),
                                     style: userProfileText,
                                   ),
                                   // Spacer(),
@@ -350,6 +353,4 @@ class _UserProfileState extends State<UserProfile> {
   }
 }
 
-
 //  }
-

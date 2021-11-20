@@ -26,11 +26,11 @@ class CurrentVisit extends StatelessWidget {
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Arrival_Date.tr(),
-                trailing: currentVisit.arrivalDate.toString()),
+                trailing: convert(currentVisit.arrivalDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Promise_Date.tr(),
-                trailing: currentVisit.promisedDate.toString()),
+                trailing: convert(currentVisit.promisedDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Insurance.tr(),
@@ -48,4 +48,8 @@ class CurrentVisit extends StatelessWidget {
       ),
     );
   }
+  String convert(DateTime d) {
+    return "${d.year.toString()}-${d.month.toString()}-${d.day.toString()}";
+  }
+
 }

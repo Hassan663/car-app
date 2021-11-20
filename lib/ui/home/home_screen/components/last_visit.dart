@@ -28,15 +28,15 @@ class LastVisit extends StatelessWidget {
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Arrival_Date.tr(),
-                trailing: lastVisit.arrivalDate.toString()),
+                trailing: convert(lastVisit.arrivalDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Promise_Date.tr(),
-                trailing: lastVisit.promisedDate.toString()),
+                trailing: convert(lastVisit.promisedDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Delivery_Date.tr(),
-                trailing: lastVisit.deliveryDate.toString()),
+                trailing: convert(lastVisit.deliveryDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Insurance.tr(),
@@ -53,5 +53,9 @@ class LastVisit extends StatelessWidget {
         ),
       ]),
     );
+  }
+
+  String convert(DateTime d) {
+    return "${d.year.toString()}-${d.month.toString()}-${d.day.toString()}";
   }
 }

@@ -22,7 +22,9 @@ class CarDatileProvider with ChangeNotifier {
         .then((data) {
       // print("STATUS CODE =>" + data.statusCode.toString());
       // print("DATA  " + data.body.toString().toUpperCase());
-      if (data.statusCode == 200) {
+      var response = json.decode(data.body);
+      print(response['status_code']);
+      if (response['status_code'] == 200) {
         DashBordModel.carVisitModel =
             CarVisitModel.fromJson(json.decode(data.body));
         carVisitModel = CarVisitModel.fromJson(json.decode(data.body));
@@ -55,7 +57,9 @@ class CarDatileProvider with ChangeNotifier {
         .then((data) {
       // print("STATUS CODE =>" + data.statusCode.toString());
       // print("DATA  " + data.body.toString().toUpperCase());
-      if (data.statusCode == 200) {
+      var response = json.decode(data.body);
+      print(response['status_code']);
+      if (response['status_code'] == 200) {
         DashBordModel.vdm = VisitDetailsModel.fromJson(json.decode(data.body));
         vdm = VisitDetailsModel.fromJson(json.decode(data.body));
         DashBordModel.showMessageSuccess(data.statusCode.toString());
