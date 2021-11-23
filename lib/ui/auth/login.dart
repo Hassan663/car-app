@@ -48,9 +48,9 @@ class _LoginState extends State<Login> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: TextFields.normalTextField(context,
-                  labelText: LocaleKeys.Email.tr(),
+                  labelText: LocaleKeys.Phone.tr(),
                   color: AppColors.white_color,
-                  hintText: "Email Address"),
+                  hintText: "Phone"),
             ),
             SizedBox(
               height: 30.h,
@@ -106,5 +106,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-
