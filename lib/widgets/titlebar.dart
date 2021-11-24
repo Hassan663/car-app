@@ -19,17 +19,6 @@ class TitleBar extends StatelessWidget {
                 AppRoutes.push(context, UserProfile());
               },
               child: Image(image: AssetImage('assets/images/leading.png'))),
-          GestureDetector(
-              onTap: () {},
-              child: GestureDetector(
-                onTap: () {
-                  AppRoutes.push(context, UserProfile());
-                },
-                child: CircleAvatar(
-                  maxRadius: 30,
-                  backgroundImage: AssetImage('assets/images/pic.png'),
-                ),
-              ))
         ]));
   }
 }

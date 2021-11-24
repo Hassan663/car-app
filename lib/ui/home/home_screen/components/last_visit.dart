@@ -7,6 +7,7 @@ import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/home/home_screen/home_screen.dart';
 import 'package:car_app/ui/home/home_screen/model/model.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LastVisit extends StatelessWidget {
   final int index;
@@ -26,27 +27,27 @@ class LastVisit extends StatelessWidget {
         Column(
           children: [
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: Icons.calendar_today,
                 title: LocaleKeys.Arrival_Date.tr(),
                 trailing: convert(lastVisit.arrivalDate!)),
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: Icons.calendar_today,
                 title: LocaleKeys.Promise_Date.tr(),
                 trailing: convert(lastVisit.promisedDate!)),
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: Icons.calendar_today,
                 title: LocaleKeys.Delivery_Date.tr(),
                 trailing: convert(lastVisit.deliveryDate!)),
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: Icons.description,
                 title: LocaleKeys.Insurance.tr(),
                 trailing: lastVisit.insurance!),
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: Icons.assignment_turned_in,
                 title: LocaleKeys.Task.tr(),
                 trailing: lastVisit.task!),
             VisitTile(
-                icon: Icons.monetization_on_outlined,
+                icon: FontAwesomeIcons.tasks,
                 title: LocaleKeys.Status.tr(),
                 trailing: lastVisit.status!),
           ],

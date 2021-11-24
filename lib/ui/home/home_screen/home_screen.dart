@@ -26,21 +26,20 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 30.w, right: 30.w),
-            child: FloatingButton1(),
-          ),
-          FloatingButton(),
-        ],
-      ),
+        floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 30.w, right: 30.w),
+              child: FloatingButton1(),
+            ),
+            FloatingButton(),
+          ],
+        ),
         body: Padding(
           padding: EdgeInsets.only(left: 33.w),
           child: SingleChildScrollView(
@@ -54,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen>
                 CarCard(tabController: _tabController),
                 SizedBox(height: 27.h),
                 BannerSection(),
-                 SizedBox(height: 27.h),
+                SizedBox(height: 27.h),
               ],
             ),
           ),
@@ -79,7 +78,7 @@ class VisitTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5.w),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.h),
       child: SizedBox(
         height: 25.h,
         child: ListTile(
@@ -87,7 +86,8 @@ class VisitTile extends StatelessWidget {
           minLeadingWidth: 0.h,
           title: Text(
             title,
-            style: GoogleFonts.openSans(fontSize: 14.sp, fontWeight: FontWeight.w400),
+            style: GoogleFonts.openSans(
+                fontSize: 14.sp, fontWeight: FontWeight.w400),
           ),
           trailing: Text(trailing,
               style: GoogleFonts.openSans(

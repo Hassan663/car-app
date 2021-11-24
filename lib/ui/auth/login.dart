@@ -1,4 +1,5 @@
 import 'package:car_app/provider/profile_provider.dart';
+import 'package:car_app/ui/auth/forget_password.dart';
 import 'package:car_app/utils/colors.dart';
 import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
@@ -48,8 +49,8 @@ class _LoginState extends State<Login> {
     if (validateAndSaveLogin()) {
       Provider.of<ProfileProvider>(context, listen: false)
           .loginresponse(
-        // "0563437070",
-        // "123456",
+        //"0563437070",
+        //"123456",
         _contactController.text,
         _passwordController.text,
       )
@@ -145,7 +146,9 @@ class _LoginState extends State<Login> {
                       LocaleKeys.Click_Here.tr(),
                       style: subtitleYellowText,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      AppRoutes.push(context, ForgetPassword());
+                    },
                   )
                 ],
               )

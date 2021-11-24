@@ -130,7 +130,7 @@ class _UserProfileState extends State<UserProfile> {
                                     width: 15.w,
                                   ),
                                   Text(
-                                    LocaleKeys.Total_Vehicles.tr(),
+                                    "Total Vechicles",
                                     style: userProfileText,
                                   ),
                                   Spacer(),

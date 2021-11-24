@@ -1,3 +1,4 @@
+import 'package:car_app/utils/routes.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,7 +74,9 @@ class _VisitDetailState extends State<VisitDetail> {
                     top: 38.h,
                     left: 33.w,
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          AppRoutes.pop(context);
+                        },
                         icon: Icon(
                           Icons.chevron_left,
                           size: 32.sp,
@@ -137,7 +140,7 @@ class _VisitDetailState extends State<VisitDetail> {
                                                 },
                                               ),
                                             ),
-                                            VerticalDiv(),
+
                                             // VisitRow(
                                             //   Trailing: VisitModel
                                             //       .data[index].pickup_date,

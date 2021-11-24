@@ -15,7 +15,7 @@ class BelowTitle extends StatelessWidget {
       children: [
         SizedBox(height: 32.h),
         Text(
-        "Hi, ${DashBordModel.customerData?.name}",
+          "Hi, ${DashBordModel.customerData?.name}",
           style: kStylingHeader,
         ),
         // SizedBox(height: 10.h),
@@ -29,7 +29,7 @@ class BelowTitle extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child:
                           Text(LocaleKeys.My_Vehicals.tr(), style: kVehicle)),
-                  Text(LocaleKeys.View_All.tr(), style: kView)
+                  // Text(LocaleKeys.View_All.tr(), style: kView)
                 ])),
       ],
     );

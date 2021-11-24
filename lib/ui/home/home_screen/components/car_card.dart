@@ -24,7 +24,7 @@ class CarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 415.h,
+      height: 550.h,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: DashBordModel
@@ -34,7 +34,7 @@ class CarCard extends StatelessWidget {
               padding: EdgeInsets.only(right: 25.w),
               child: SizedBox(
                 height: 400.h,
-                width: 287.w,
+                width: 300.w,
                 child: Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -104,9 +104,9 @@ class CarCard extends StatelessWidget {
                       ),
                       Container(
                         alignment: Alignment.centerRight,
-                        height: 74.h,
-                        child: Image.network(DashBordModel
-                            .allVechiles!.vechiles[index].carModelImage),
+                        height: 100.h,
+                        // child: Image.network(DashBordModel
+                        //     .allVechiles!.vechiles[index].carModelImage),
                       ),
                       TabBar(
                         unselectedLabelColor: Color(0xff838383),
@@ -129,13 +129,22 @@ class CarCard extends StatelessWidget {
                           ? Column(
                               children: [
                                 SizedBox(
-                                  height: 162.h,
-                                  width: 287.w,
+                                  height: 270.h,
+                                  width: 300.w,
                                   child: TabBarView(
                                     children: [
-                                      CurrentVisit(index: index,currentVisit: DashBordModel.allVechiles!.vechiles[index].vechileCurrentVisitData
-                                  ),
-                                      LastVisit(index: index,lastVisit:DashBordModel.allVechiles!.vechiles[index].vechileLastVisitData),
+                                      CurrentVisit(
+                                          index: index,
+                                          currentVisit: DashBordModel
+                                              .allVechiles!
+                                              .vechiles[index]
+                                              .vechileCurrentVisitData),
+                                      LastVisit(
+                                          index: index,
+                                          lastVisit: DashBordModel
+                                              .allVechiles!
+                                              .vechiles[index]
+                                              .vechileLastVisitData),
                                     ],
                                     controller: _tabController,
                                   ),
@@ -157,7 +166,8 @@ class CarCard extends StatelessWidget {
                               tap: () => AppRoutes.push(
                                   context,
                                   AppointmenScreen(
-                                    custid:DashBordModel.customerData!.customerId,
+                                      custid: DashBordModel
+                                          .customerData!.customerId,
                                       vehicle: DashBordModel
                                           .allVechiles!.vechiles[index])),
                             )

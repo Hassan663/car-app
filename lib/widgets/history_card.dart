@@ -6,6 +6,7 @@ import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -22,7 +23,7 @@ class HistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400.h,
+      height: 500.h,
       child: ListView.builder(
         itemCount: DashBordModel.carVisitModel!.allVechileVisits.length,
         itemBuilder: (context, index) => Padding(
@@ -36,13 +37,16 @@ class HistoryCard extends StatelessWidget {
               children: [
                 Center(
                   child: ListTile(
-                      title: Text(CarData.data[index].title,
+                      title: Text(
+                          "Visit On : " +
+                              convert(DashBordModel.carVisitModel!
+                                  .allVechileVisits[index].arrivalDate),
                           style: GoogleFonts.openSans(
                               color: Color(0xff414141),
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w600)),
                       subtitle: Text(
-                        CarData.data[index].subtitle,
+                        "",
                         style: GoogleFonts.openSans(
                             color: Color(0xff838383),
                             fontSize: 16.sp,
@@ -55,49 +59,64 @@ class HistoryCard extends StatelessWidget {
                   child: Column(
                     children: [
                       CardTiles(
-                        image: "assets/images/1.png",
+                        iconData: Icons.calendar_today,
                         title: LocaleKeys.Arrival_Date.tr(),
                         subtitle: convert(DashBordModel.carVisitModel!
                             .allVechileVisits[index].arrivalDate),
                         color: Color(0xffF48129),
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CardTiles(
-                        image: "assets/images/Group 97.png",
+                        iconData: Icons.calendar_today,
                         title: LocaleKeys.Promise_Date.tr(),
                         subtitle: convert(DashBordModel.carVisitModel!
                             .allVechileVisits[index].promisedDate),
                         color: Color(0xffF48129),
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CardTiles(
-                        image: "assets/images/1.png",
+                        iconData: Icons.calendar_today,
                         title: LocaleKeys.Delivery_Date.tr(),
                         subtitle: convert(DashBordModel.carVisitModel!
                             .allVechileVisits[index].deliveryDate),
                         color: Color(0xffF48129),
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CardTiles(
-                        image: "assets/images/1.png",
+                        iconData: Icons.description,
                         title: LocaleKeys.Insurance.tr(),
                         subtitle: DashBordModel
                             .carVisitModel!.allVechileVisits[index].insurance,
                         color: Color(0xffF48129),
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CardTiles(
-                        image: "assets/images/Group 97.png",
+                        iconData: Icons.task,
                         title: LocaleKeys.Task.tr(),
                         subtitle: DashBordModel
                             .carVisitModel!.allVechileVisits[index].task,
                         color: Color(0xffF48129),
                       ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       CardTiles(
-                        image: "assets/images/Group 98.png",
+                        iconData: FontAwesomeIcons.tasks,
                         title: LocaleKeys.Status.tr(),
                         subtitle: DashBordModel
                             .carVisitModel!.allVechileVisits[index].status,
                         color: Color(0xffF48129),
                       ),
                       SizedBox(
-                        height: 21.h,
+                        height: 40.h,
                       ),
                     ],
                   ),
@@ -157,14 +176,14 @@ class CustomButton extends StatelessWidget {
 }
 
 class CardTiles extends StatelessWidget {
-  final String image;
+  final IconData iconData;
   final String title;
   final String subtitle;
   final Color color;
 
   const CardTiles({
     required this.color,
-    required this.image,
+    required this.iconData,
     required this.subtitle,
     required this.title,
     Key? key,
@@ -176,7 +195,7 @@ class CardTiles extends StatelessWidget {
       height: 33.h,
       child: ListTile(
         minLeadingWidth: 12.85.w,
-        leading: Image.asset(image),
+        leading: Icon(iconData),
         title: Text(
           title,
           style: GoogleFonts.openSans(

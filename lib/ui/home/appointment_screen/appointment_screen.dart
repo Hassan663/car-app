@@ -1,3 +1,4 @@
+import 'package:car_app/utils/routes.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -83,7 +84,9 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                       top: 58.h,
                       left: 33.w,
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            AppRoutes.pop(context);
+                          },
                           icon: Icon(
                             Icons.chevron_left,
                             size: 32.sp,
@@ -94,12 +97,14 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                       child: Logo(
                         vechile: widget.vehicle,
                       )),
-                  Positioned(
-                      top: 174.h,
-                      left: 207.h,
-                      height: 115.h,
-                      child: Image.network(widget.vehicle
-                          .carModelImage)), //Image(image: AssetImage('assets/images/car.png')))
+                  // Positioned(
+                  //     top: 174.h,
+                  //     left: 207.h,
+                  //     height: 115.h,
+                  //     child: Image.network(widget.vehicle
+                  //         .carModelImage)
+
+                  //         ), //Image(image: AssetImage('assets/images/car.png')))
                 ]),
               ),
               SizedBox(height: 24.h),
@@ -137,7 +142,9 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                             child: CircularProgressIndicator(),
                           )
                         : Stack(children: [
-                            HistoryCard(cusid:widget.custid,carid:widget.vehicle.carId),
+                            HistoryCard(
+                                cusid: widget.custid,
+                                carid: widget.vehicle.carId),
                           ])
                   ])),
             ],
@@ -158,7 +165,7 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 260.w,
+      width: 260.w, height: 500.h,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 22.h),
         child:

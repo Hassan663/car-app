@@ -41,7 +41,7 @@ TextStyle smallWhiteText1 = GoogleFonts.openSans(
 
 TextStyle largeGreyText = GoogleFonts.openSans(
   color: Colors.black,
-  fontSize: 30.sp,
+  fontSize: 25.sp,
   fontWeight: FontWeight.w700,
 );
 
