@@ -40,9 +40,9 @@ TextStyle smallWhiteText1 = GoogleFonts.openSans(
 );
 
 TextStyle largeGreyText = GoogleFonts.openSans(
-  color: AppColors.grey_color,
+  color: Colors.black,
   fontSize: 30.sp,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w700,
 );
 
 TextStyle smallBlackText = GoogleFonts.openSans(

@@ -18,6 +18,10 @@ class TextFields {
     required Color color,
   }) {
     return TextFormField(
+      validator: (value) {
+        return (value!.isEmpty) ? emptyValidationMessage : null;
+      },
+      controller: controller,
       showCursor: true,
       cursorColor: AppColors.primery_color,
       maxLines: maxLength,

@@ -2,8 +2,6 @@ import 'package:car_app/ui/contact_us/contact_us.dart';
 import 'package:car_app/utils/colors.dart';
 import 'package:car_app/utils/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -97,7 +95,7 @@ class FloatingButton1 extends StatelessWidget {
     return FloatingActionButton(
       child: Icon(FontAwesomeIcons.whatsapp, color: AppColors.white_color),
       onPressed: () {
-        print("object1");
+        //   print("object1");
         openwhatsapp();
       },
       backgroundColor: Color(0xffF48129),

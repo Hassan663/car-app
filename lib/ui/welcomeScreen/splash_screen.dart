@@ -26,23 +26,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: AppColors.primery_color,
       body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 50.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                color: AppColors.primery_color,
-                child: Image.asset("assets/images/main_logo.png"),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              color: AppColors.primery_color,
+              child: Image.asset("assets/images/main_logo.png"),
+            ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 20.h),
+              child: Text("Your QUINTESSENTIAL AUTO GARAGE".toUpperCase(),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.sp,
+                      fontWeight: FontWeight.w600)),
+            )
+          ],
         ),
       ),
     );

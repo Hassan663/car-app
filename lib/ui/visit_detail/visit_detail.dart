@@ -1,31 +1,64 @@
-import 'package:car_app/ui/home/appointment_screen/appointment_screen.dart';
-import 'package:car_app/ui/visit_detail/model.dart';
-import 'package:car_app/widgets/buttons.dart';
-import 'package:car_app/widgets/navbar.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:car_app/translations/locale_keys.g.dart';
-import 'package:easy_localization/src/public_ext.dart';
+import 'package:provider/provider.dart';
 
-class VisitDetail extends StatelessWidget {
-  const VisitDetail({Key? key}) : super(key: key);
+import 'package:car_app/model/visit_details_model.dart';
+import 'package:car_app/provider/car_provider.dart';
+import 'package:car_app/translations/locale_keys.g.dart';
+import 'package:car_app/ui/visit_detail/model.dart';
+import 'package:car_app/widgets/buttons.dart';
+
+class VisitDetail extends StatefulWidget {
+  final String carid;
+  final String cusid;
+  const VisitDetail({
+    Key? key,
+    required this.carid,
+    required this.cusid,
+  }) : super(key: key);
+
+  @override
+  State<VisitDetail> createState() => _VisitDetailState();
+}
+
+class _VisitDetailState extends State<VisitDetail> {
+  VisitDetailsModel? vdm;
+  bool isfound = false;
+  @override
+  void initState() {
+    getHistoryOfVehicle();
+    super.initState();
+  }
+
+  getHistoryOfVehicle() {
+    Provider.of<CarDatileProvider>(context, listen: false)
+        .fetchVehicleDatiles("1420", "1382", "1383")
+        .then((value) => {
+              print(value!.msg.toString()),
+              setState(() {
+                vdm = value;
+                isfound = true;
+              })
+            });
+  }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
-floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 30.w, right: 30.w),
-            child: FloatingButton1(),
-          ),
-          FloatingButton(),
-        ],
-      ),
+            floatingActionButton: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 30.w, right: 30.w),
+                  child: FloatingButton1(),
+                ),
+                FloatingButton(),
+              ],
+            ),
             //bottomNavigationBar: NavBar(),
             body: Container(
               height: 900.h,
@@ -45,7 +78,7 @@ floatingActionButton: Row(
                           Icons.chevron_left,
                           size: 32.sp,
                         ))),
-                Positioned(top: 74.h, left: 33.w, child: Logo()),
+                // Positioned(top: 74.h, left: 33.w, child: Logo(vechile: ,)),
                 Positioned(
                     top: 174.h,
                     left: 33.w,
@@ -64,83 +97,113 @@ floatingActionButton: Row(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.only(left: 15.0, right: 15),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 13.h,
-                                    ),
-                                    Text(
-                                      LocaleKeys.Visit_Detail.tr(),
-                                      style: GoogleFonts.openSans(
-                                          fontSize: 25.sp,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    SizedBox(
-                                      height: 26.h,
-                                    ),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].delivered_date,
-                                      title: VisitModel.data[index].delivered,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].pickup_date,
-                                      title: VisitModel.data[index].pickup,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].Section_date,
-                                      title: VisitModel.data[index].Section,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].progress_date,
-                                      title: VisitModel.data[index].progress,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].Approved_date,
-                                      title: VisitModel.data[index].Approved,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].claim_date,
-                                      title: VisitModel.data[index].claim,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].Arrived_date,
-                                      title: VisitModel.data[index].Arrived,
-                                    ),
-                                    VerticalDiv(),
-                                    VisitRow(
-                                      Trailing:
-                                          VisitModel.data[index].Received_date,
-                                      title: VisitModel.data[index].Received,
-                                    ),
-                                    // Row(
-                                    //   children: [
-                                    //     Spacer(),
-                                    //     FloatingActionButton(
-                                    //       child: Image.asset('assets/images/phone.png'),
-                                    //       onPressed: () {},
-                                    //       backgroundColor: Color(0xffF48129),
-                                    //     ),
-                                    //   ],
-                                    // ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                                padding: EdgeInsets.only(left: 15.0, right: 15),
+                                child: isfound
+                                    ? SingleChildScrollView(
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 13.h,
+                                            ),
+                                            Text(
+                                              LocaleKeys.Visit_Detail.tr(),
+                                              style: GoogleFonts.openSans(
+                                                  fontSize: 25.sp,
+                                                  fontWeight: FontWeight.w700),
+                                            ),
+                                            SizedBox(
+                                              height: 26.h,
+                                            ),
+                                            Container(
+                                              height: 560.h,
+                                              width: 347,
+                                              child: ListView.builder(
+                                                itemCount:
+                                                    vdm!.visitDetail.length,
+                                                itemBuilder: (context, index) {
+                                                  return Column(
+                                                    children: [
+                                                      VisitRow(
+                                                        Trailing: vdm!
+                                                            .visitDetail[index]
+                                                            .dateAdded,
+                                                        title: vdm!
+                                                            .visitDetail[index]
+                                                            .description,
+                                                      ),
+                                                      VerticalDiv(),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                            VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].pickup_date,
+                                            //   title:
+                                            //       VisitModel.data[index].pickup,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].Section_date,
+                                            //   title: VisitModel
+                                            //       .data[index].Section,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].progress_date,
+                                            //   title: VisitModel
+                                            //       .data[index].progress,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].Approved_date,
+                                            //   title: VisitModel
+                                            //       .data[index].Approved,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].claim_date,
+                                            //   title:
+                                            //       VisitModel.data[index].claim,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].Arrived_date,
+                                            //   title: VisitModel
+                                            //       .data[index].Arrived,
+                                            // ),
+                                            // VerticalDiv(),
+                                            // VisitRow(
+                                            //   Trailing: VisitModel
+                                            //       .data[index].Received_date,
+                                            //   title: VisitModel
+                                            //       .data[index].Received,
+                                            // ),
+                                            // // Row(
+                                            //   children: [
+                                            //     Spacer(),
+                                            //     FloatingActionButton(
+                                            //       child: Image.asset('assets/images/phone.png'),
+                                            //       onPressed: () {},
+                                            //       backgroundColor: Color(0xffF48129),
+                                            //     ),
+                                            //   ],
+                                            // ),
+                                          ],
+                                        ),
+                                      )
+                                    : Container(
+                                        child: Center(
+                                          child: CircularProgressIndicator(),
+                                        ),
+                                      )),
                           ),
                         ),
                       ),

@@ -1,16 +1,20 @@
+import 'package:easy_localization/src/public_ext.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:car_app/model/profile_model.dart';
+import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/home/home_screen/home_screen.dart';
 import 'package:car_app/ui/home/home_screen/model/model.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:easy_localization/src/public_ext.dart';
-import 'package:car_app/translations/locale_keys.g.dart';
 
 class LastVisit extends StatelessWidget {
   final int index;
+  final VechileTVisitData lastVisit;
   const LastVisit({
-    required this.index,
     Key? key,
+    required this.index,
+    required this.lastVisit,
   }) : super(key: key);
 
   @override
@@ -24,31 +28,34 @@ class LastVisit extends StatelessWidget {
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Arrival_Date.tr(),
-                trailing: HomeScreen1CarData.data[index].last![0].arrivaldate!),
+                trailing: convert(lastVisit.arrivalDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Promise_Date.tr(),
-                trailing: HomeScreen1CarData.data[index].last![0].promisedate!),
+                trailing: convert(lastVisit.promisedDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Delivery_Date.tr(),
-                trailing:
-                    HomeScreen1CarData.data[index].last![0].deliverydate!),
+                trailing: convert(lastVisit.deliveryDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Insurance.tr(),
-                trailing: HomeScreen1CarData.data[index].last![0].Insurance!),
+                trailing: lastVisit.insurance!),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Task.tr(),
-                trailing: HomeScreen1CarData.data[index].last![0].task!),
+                trailing: lastVisit.task!),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Status.tr(),
-                trailing: HomeScreen1CarData.data[index].last![0].status!),
+                trailing: lastVisit.status!),
           ],
         ),
       ]),
     );
+  }
+
+  String convert(DateTime d) {
+    return "${d.year.toString()}-${d.month.toString()}-${d.day.toString()}";
   }
 }

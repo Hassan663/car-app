@@ -1,16 +1,18 @@
-import 'package:car_app/translations/locale_keys.g.dart';
-import 'package:car_app/ui/home/home_screen/home_screen.dart';
-import 'package:car_app/ui/home/home_screen/model/model.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:easy_localization/src/public_ext.dart';
+import 'package:car_app/model/profile_model.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
+import 'package:car_app/ui/home/home_screen/home_screen.dart';
 
 class CurrentVisit extends StatelessWidget {
   final int index;
+  final VechileTVisitData currentVisit;
+
   const CurrentVisit({
-    required this.index,
     Key? key,
+    required this.index,
+    required this.currentVisit,
   }) : super(key: key);
 
   @override
@@ -24,29 +26,30 @@ class CurrentVisit extends StatelessWidget {
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Arrival_Date.tr(),
-                trailing:
-                    HomeScreen1CarData.data[index].current![0].arrivaldate!),
+                trailing: convert(currentVisit.arrivalDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Promise_Date.tr(),
-                trailing:
-                    HomeScreen1CarData.data[index].current![0].promisedate!),
+                trailing: convert(currentVisit.promisedDate!)),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Insurance.tr(),
-                trailing:
-                    HomeScreen1CarData.data[index].current![0].Insurance!),
+                trailing: currentVisit.insurance!),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Task.tr(),
-                trailing: HomeScreen1CarData.data[index].current![0].task!),
+                trailing: currentVisit.task!),
             VisitTile(
                 icon: Icons.monetization_on_outlined,
                 title: LocaleKeys.Status.tr(),
-                trailing: HomeScreen1CarData.data[index].current![0].status!),
+                trailing: currentVisit.status!),
           ],
         ),
       ),
     );
   }
+  String convert(DateTime d) {
+    return "${d.year.toString()}-${d.month.toString()}-${d.day.toString()}";
+  }
+
 }

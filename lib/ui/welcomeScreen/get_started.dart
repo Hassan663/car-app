@@ -22,7 +22,7 @@ class _GetStartedState extends State<GetStarted> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: AppColors.white_color,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,17 +38,23 @@ class _GetStartedState extends State<GetStarted> {
             ),
             Text(
               LocaleKeys.Welcome_to_Apex_Auto_Garage.tr(),
-              style: welcomeText,
+              style: TextStyle(
+                  color: Color(0xff414141),
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 10.h,
             ),
-            Text(
-              LocaleKeys
-                      .We_Have_made_it_easier_than_ever_for_you_to_keep_tabs_on_your_vehicles_repair_status
-                  .tr(),
-              textAlign: TextAlign.center,
-              style: smallGreyText,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 19.w),
+              child: Text(
+                LocaleKeys
+                        .We_Have_made_it_easier_than_ever_for_you_to_keep_tabs_on_your_vehicles_repair_status
+                    .tr(),
+                textAlign: TextAlign.center,
+                style: smallGreyText,
+              ),
             ),
             SizedBox(
               height: 60.h,
@@ -62,7 +68,7 @@ class _GetStartedState extends State<GetStarted> {
                   AppRoutes.push(context, Login());
                 },
                 backgroundColor: AppColors.yellow_color,
-                textColor: AppColors.white_color,
+                textColor: Colors.white,
                 borderColor: AppColors.yellow_color)
           ],
         ),

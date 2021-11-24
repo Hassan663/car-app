@@ -1,5 +1,6 @@
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/home/home_screen/constants.dart';
+import 'package:car_app/utils/dashbordModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/src/public_ext.dart';
@@ -14,7 +15,7 @@ class BelowTitle extends StatelessWidget {
       children: [
         SizedBox(height: 32.h),
         Text(
-          LocaleKeys.Hi_Habib.tr(),
+        "Hi, ${DashBordModel.customerData?.name}",
           style: kStylingHeader,
         ),
         // SizedBox(height: 10.h),
