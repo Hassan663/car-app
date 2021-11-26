@@ -51,7 +51,7 @@ class ForgetPassword extends StatelessWidget {
                 height: 60.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 25.w),
                 child: TextFields.normalTextField(context,
                     labelText: "User Name",
                     // controller: _contactController,

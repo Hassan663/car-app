@@ -46,11 +46,11 @@ class HistoryCard extends StatelessWidget {
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w600)),
                       subtitle: Text(
-                        "",
+                        "Visit Details",
                         style: GoogleFonts.openSans(
                             color: Color(0xff838383),
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400),
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold),
                       )),
                 ),
                 Container(
@@ -195,17 +195,17 @@ class CardTiles extends StatelessWidget {
       height: 33.h,
       child: ListTile(
         minLeadingWidth: 12.85.w,
-        leading: Icon(iconData),
+        leading: Icon(iconData,size: 17,),
         title: Text(
           title,
           style: GoogleFonts.openSans(
-              fontSize: 17.sp,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w400,
               color: Color(0xff000000)),
         ),
         trailing: Text(subtitle,
             style: GoogleFonts.openSans(
-                fontSize: 17.sp, fontWeight: FontWeight.w600, color: color)),
+                fontSize: 20.sp, fontWeight: FontWeight.w600, color: color)),
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/home/appointment_screen/appointment_screen.dart';
 import 'package:car_app/ui/home/home_screen/components/current_visit.dart';
@@ -68,8 +70,8 @@ class CarCard extends StatelessWidget {
                                           "",
                                       style: GoogleFonts.openSans(
                                         color: Color(0xff414141),
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w400,
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.bold,
                                       )),
                                 ],
                               ),
@@ -81,8 +83,8 @@ class CarCard extends StatelessWidget {
                                         "",
                                     style: GoogleFonts.openSans(
                                       color: Color(0xff414141),
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18.sp,
+                                      fontWeight: FontWeight.bold,
                                     )),
                               ),
                               SizedBox(
@@ -96,19 +98,19 @@ class CarCard extends StatelessWidget {
                                         "",
                                     style: GoogleFonts.openSans(
                                       color: Color(0xff838383),
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.bold,
                                     )),
                               )
                             ]),
                       ),
                       Container(
                         alignment: Alignment.centerRight,
-                        height: 100.h,
+                        height: 30.h,
                         // child: Image.network(DashBordModel
                         //     .allVechiles!.vechiles[index].carModelImage),
                       ),
-                      TabBar(
+                      TabBar(labelStyle: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold),
                         unselectedLabelColor: Color(0xff838383),
                         indicatorColor: Color(0xffF48129),
                         labelColor: Color(0xffF48129),
@@ -129,7 +131,7 @@ class CarCard extends StatelessWidget {
                           ? Column(
                               children: [
                                 SizedBox(
-                                  height: 270.h,
+                                  height: 300.h,
                                   width: 300.w,
                                   child: TabBarView(
                                     children: [

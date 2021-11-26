@@ -78,20 +78,20 @@ class VisitTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
       child: SizedBox(
         height: 25.h,
         child: ListTile(
-          leading: Icon(icon, color: Color(0xffF48129)),
-          minLeadingWidth: 0.h,
+          leading: Icon(icon, color: Color(0xffF48129),size: 25.sp,),
+           minLeadingWidth: 6.h,
           title: Text(
             title,
             style: GoogleFonts.openSans(
-                fontSize: 14.sp, fontWeight: FontWeight.w400),
+                fontSize: 19.sp, fontWeight: FontWeight.w500),
           ),
           trailing: Text(trailing,
               style: GoogleFonts.openSans(
-                  fontSize: 14.sp,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: Color(0xffF48129))),
         ),

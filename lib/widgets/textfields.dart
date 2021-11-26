@@ -28,7 +28,7 @@ class TextFields {
       obscureText: false,
       style: smallBlackText,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(16, 20, 16, 20),
+        contentPadding: EdgeInsets.fromLTRB(16, 10, 16, 20),
         hintText: hintText,
         hintStyle: TextStyle(
             color: AppColors.grey_color1,

@@ -1,5 +1,6 @@
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/contact_us/warning.dart';
+import 'package:car_app/ui/home/home_screen/constants.dart';
 import 'package:car_app/utils/colors.dart';
 import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
@@ -60,7 +61,7 @@ class _UserProfileState extends State<UserProfile> {
                         },
                         icon: Icon(
                           Icons.chevron_left,
-                          size: 32.sp,
+                          size: 40.sp,
                         ))),
                 //Positioned(top: 97.h, left: 33.w, child: Logo()),
                 Positioned(
@@ -72,7 +73,7 @@ class _UserProfileState extends State<UserProfile> {
                         children: [
                           Text(
                             DashBordModel.customerData!.name.toString(),
-                            style: largeGreyText,
+                            style: kStylingHeader,
                           )
                         ])),
                 Positioned(
@@ -117,7 +118,7 @@ class _UserProfileState extends State<UserProfile> {
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.car,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,
@@ -141,7 +142,7 @@ class _UserProfileState extends State<UserProfile> {
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.tools,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,
@@ -168,7 +169,7 @@ class _UserProfileState extends State<UserProfile> {
                                   Icon(
                                     FontAwesomeIcons.envelope,
                                     color: Colors.black,
-                                    size: 30,
+                                    size: 17,
                                   ),
 
                                   //Image.asset("assets/images/email.png"),
@@ -198,7 +199,7 @@ class _UserProfileState extends State<UserProfile> {
                                   Icon(
                                     FontAwesomeIcons.phone,
                                     color: Colors.black,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,

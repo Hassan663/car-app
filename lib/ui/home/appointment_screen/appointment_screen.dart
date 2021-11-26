@@ -73,7 +73,7 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
           child: Column(
             children: [
               Container(
-                height: 289.h,
+                height: 330.h,
                 child: Stack(children: [
                   Positioned(
                       child: Image(
@@ -81,7 +81,7 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                           width: width,
                           image: AssetImage('assets/images/ellipse.png'))),
                   Positioned(
-                      top: 58.h,
+                      top: 20.h,
                       left: 33.w,
                       child: IconButton(
                           onPressed: () {
@@ -89,14 +89,15 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                           },
                           icon: Icon(
                             Icons.chevron_left,
-                            size: 32.sp,
+                            size: 40.sp,
                           ))),
                   Positioned(
-                      top: 97.h,
+                      top: 90.h,
                       left: 33.w,
                       child: Logo(
                         vechile: widget.vehicle,
                       )),
+
                   // Positioned(
                   //     top: 174.h,
                   //     left: 207.h,
@@ -107,7 +108,7 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                   //         ), //Image(image: AssetImage('assets/images/car.png')))
                 ]),
               ),
-              SizedBox(height: 24.h),
+              // SizedBox(height: 24.h),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 33.w),
                   child: Column(children: [
@@ -117,8 +118,8 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                         LocaleKeys.Appointment_History.tr(),
                         style: GoogleFonts.openSans(
                           color: Color(0xff414141),
-                          fontSize: 25.sp,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 30.sp,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -131,8 +132,8 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                         LocaleKeys.Visits.tr(),
                         style: GoogleFonts.openSans(
                           color: Color(0xff414141),
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -143,6 +144,7 @@ class _AppointmenScreenState extends State<AppointmenScreen> {
                           )
                         : Stack(children: [
                             HistoryCard(
+
                                 cusid: widget.custid,
                                 carid: widget.vehicle.carId),
                           ])
@@ -169,12 +171,13 @@ class Logo extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 22.h),
         child:
-            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Row(
             children: [
               SizedBox(
-                height: 30,
-                width: 30,
+                height: 55,
+                width: 55,
                 child: Image.network(vechile.carMakeLogo),
               ),
               // Image.asset('assets/images/logo1.png'),
@@ -182,8 +185,8 @@ class Logo extends StatelessWidget {
               Text(vechile.carMakeName,
                   style: GoogleFonts.openSans(
                     color: Color(0xff414141),
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.bold,
                   )),
             ],
           ),
@@ -194,20 +197,18 @@ class Logo extends StatelessWidget {
             child: Text(vechile.carModelName,
                 style: GoogleFonts.openSans(
                   color: Color(0xff838383),
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 26.sp,
+                  fontWeight: FontWeight.bold,
                 )),
           ),
-          SizedBox(
-            height: 5.h,
-          ),
+
           Padding(
             padding: EdgeInsets.only(left: 65.w),
             child: Text(vechile.plateNo,
                 style: GoogleFonts.openSans(
                   color: Color(0xff838383),
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.bold,
                 )),
           )
         ]),

@@ -111,8 +111,8 @@ class _VisitDetailState extends State<VisitDetail> {
                                             Text(
                                               LocaleKeys.Visit_Detail.tr(),
                                               style: GoogleFonts.openSans(
-                                                  fontSize: 25.sp,
-                                                  fontWeight: FontWeight.w700),
+                                                  fontSize: 30.sp,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                             SizedBox(
                                               height: 26.h,
@@ -268,14 +268,14 @@ class VisitRow extends StatelessWidget {
               overflow: TextOverflow.clip,
               softWrap: true,
               style: TextStyle(
-                fontSize: 11.sp,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
               )),
         ),
         Spacer(),
         Icon(
           Icons.calendar_today_outlined,
-          color: Color(0xffF48129),
+          color: Color(0xffF48129),size: 18,
         ),
         SizedBox(
           width: 8.w,
@@ -283,7 +283,7 @@ class VisitRow extends StatelessWidget {
         Text(
           Trailing,
           style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w400,
               color: Color(0xffF48129)),
         )
