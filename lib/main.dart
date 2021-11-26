@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown
-  ]);
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ProfileProvider()),
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           designSize: Size(414, 896),
           builder: () => MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'Apex Master',
+              title: 'Apex Auto Garage',
               theme: ThemeData(),
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,

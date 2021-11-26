@@ -20,9 +20,10 @@ class _GetStartedState extends State<GetStarted> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
+      // Color(0xffFDFEFE),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

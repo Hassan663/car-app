@@ -70,16 +70,6 @@ class _UserProfileState extends State<UserProfile> {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                              onTap: () {},
-                              child: CircleAvatar(
-                                maxRadius: 30,
-                                backgroundImage:
-                                    AssetImage('assets/images/pic.png'),
-                              )),
-                          SizedBox(
-                            width: 10.w,
-                          ),
                           Text(
                             DashBordModel.customerData!.name.toString(),
                             style: largeGreyText,
@@ -125,7 +115,10 @@ class _UserProfileState extends State<UserProfile> {
                               padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Row(
                                 children: [
-                                  Image.asset("assets/images/car_icon.png"),
+                                  Icon(
+                                    FontAwesomeIcons.car,
+                                    size: 30,
+                                  ),
                                   SizedBox(
                                     width: 15.w,
                                   ),
@@ -146,7 +139,10 @@ class _UserProfileState extends State<UserProfile> {
                               padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Row(
                                 children: [
-                                  Image.asset("assets/images/total_visit.png"),
+                                  Icon(
+                                    FontAwesomeIcons.tools,
+                                    size: 30,
+                                  ),
                                   SizedBox(
                                     width: 15.w,
                                   ),
@@ -169,8 +165,11 @@ class _UserProfileState extends State<UserProfile> {
                               padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Row(
                                 children: [
-                                  Icon(Icons.email,
-                                      color: AppColors.grey_color),
+                                  Icon(
+                                    FontAwesomeIcons.envelope,
+                                    color: Colors.black,
+                                    size: 30,
+                                  ),
 
                                   //Image.asset("assets/images/email.png"),
                                   SizedBox(
@@ -196,7 +195,11 @@ class _UserProfileState extends State<UserProfile> {
                               padding: EdgeInsets.symmetric(horizontal: 20.w),
                               child: Row(
                                 children: [
-                                  Image.asset("assets/images/call.png"),
+                                  Icon(
+                                    FontAwesomeIcons.phone,
+                                    color: Colors.black,
+                                    size: 30,
+                                  ),
                                   SizedBox(
                                     width: 15.w,
                                   ),
@@ -278,10 +281,10 @@ class _UserProfileState extends State<UserProfile> {
                                       height: height * 0.05,
                                       width: 180.w,
                                       text: LocaleKeys.Contact_Us.tr(),
-                                      textStyle: smallWhiteText,
+                                      textStyle: smallWhiteText1,
                                       onPressed: () {},
                                       backgroundColor: AppColors.yellow_color,
-                                      textColor: AppColors.white_color,
+                                      textColor: Colors.white,
                                       borderColor: AppColors.yellow_color),
                                 ],
                               ),
@@ -298,28 +301,24 @@ class _UserProfileState extends State<UserProfile> {
                                   CircularButtons(
                                       height: height * 0.05,
                                       width: 150.w,
+                                      text: LocaleKeys.Log_Out.tr(),
+                                      textStyle: smallWhiteText1,
+                                      onPressed: () {
+                                        AppRoutes.push(context, Warning());
+                                      },
+                                      backgroundColor: AppColors.yellow_color,
+                                      textColor: Colors.white,
+                                      borderColor: AppColors.yellow_color),
+                                  CircularButtons(
+                                      height: height * 0.05,
+                                      width: 150.w,
                                       text: LocaleKeys.Change_Password.tr(),
                                       textStyle: smallWhiteText1,
                                       onPressed: () {
                                         AppRoutes.push(context, Warning());
                                       },
                                       backgroundColor: AppColors.yellow_color,
-                                      textColor: AppColors.white_color,
-                                      borderColor: AppColors.yellow_color),
-                                  CircularButtons(
-                                      height: height * 0.05,
-                                      width: 150.w,
-                                      text: LocaleKeys.Log_Out.tr(),
-                                      textStyle: GoogleFonts.openSans(
-                                        color: AppColors.white_color,
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      onPressed: () {
-                                        AppRoutes.push(context, Warning());
-                                      },
-                                      backgroundColor: AppColors.yellow_color,
-                                      textColor: AppColors.white_color,
+                                      textColor: Colors.white,
                                       borderColor: AppColors.yellow_color),
                                 ],
                               ),
@@ -331,12 +330,12 @@ class _UserProfileState extends State<UserProfile> {
                                 height: height * 0.05,
                                 width: 180.w,
                                 text: LocaleKeys.Disclaimer.tr(),
-                                textStyle: smallWhiteText,
+                                textStyle: smallWhiteText1,
                                 onPressed: () {
                                   AppRoutes.push(context, Warning());
                                 },
                                 backgroundColor: AppColors.yellow_color,
-                                textColor: AppColors.white_color,
+                                textColor: Colors.white,
                                 borderColor: AppColors.yellow_color),
                           ],
                         ),

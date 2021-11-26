@@ -2,7 +2,7 @@
     package="com.example.car_app">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="APEX_MASTER"
+        android:label="Apex Auto Garage"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
