@@ -82,16 +82,16 @@ class VisitTile extends StatelessWidget {
       child: SizedBox(
         height: 25.h,
         child: ListTile(
-          leading: Icon(icon, color: Color(0xffF48129),size: 25.sp,),
+          leading: Icon(icon, color: Color(0xffF48129),size: 20.sp,),
            minLeadingWidth: 6.h,
           title: Text(
             title,
             style: GoogleFonts.openSans(
-                fontSize: 19.sp, fontWeight: FontWeight.w500),
+                fontSize: 16.sp, fontWeight: FontWeight.w500),
           ),
           trailing: Text(trailing,
               style: GoogleFonts.openSans(
-                  fontSize: 20.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: Color(0xffF48129))),
         ),

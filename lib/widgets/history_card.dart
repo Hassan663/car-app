@@ -54,7 +54,7 @@ class HistoryCard extends StatelessWidget {
                       )),
                 ),
                 Container(
-                  color: Color(0xffF8EDDC),
+                  color: Color(0xfffef2e9),
                   width: 347.w,
                   child: Column(
                     children: [
@@ -195,17 +195,17 @@ class CardTiles extends StatelessWidget {
       height: 33.h,
       child: ListTile(
         minLeadingWidth: 12.85.w,
-        leading: Icon(iconData,size: 17,),
+        leading: Icon(iconData, color: Color(0xffF48129),size: 18,),
         title: Text(
           title,
           style: GoogleFonts.openSans(
-              fontSize: 20.sp,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w400,
               color: Color(0xff000000)),
         ),
         trailing: Text(subtitle,
             style: GoogleFonts.openSans(
-                fontSize: 20.sp, fontWeight: FontWeight.w600, color: color)),
+                fontSize: 18.sp, fontWeight: FontWeight.w600, color: Color(0xffF48129))),
       ),
     );
   }

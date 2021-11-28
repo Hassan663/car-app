@@ -7,5 +7,5 @@ class AppColors {
   static const Color light_grey_color = Color(0xff838383);
   static const Color yellow_color = Color(0xffF48129);
   static const Color grey_color1 = Color(0xffF5E5E5E);
-  static const Color skin_color = Color(0xffE3B77459);
+  static const Color skin_color = Color(0xfffef2e9);
 }

@@ -31,7 +31,7 @@ class TextFields {
         contentPadding: EdgeInsets.fromLTRB(16, 10, 16, 20),
         hintText: hintText,
         hintStyle: TextStyle(
-            color: AppColors.grey_color1,
+            color: AppColors.grey_color,
             fontSize: 20,
             fontWeight: FontWeight.w400),
         labelText: labelText,

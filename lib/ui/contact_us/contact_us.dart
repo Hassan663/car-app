@@ -42,7 +42,7 @@ class _ContactUsState extends State<ContactUs> {
                 height: 60.h,
               ),
               Center(
-                child: Image.asset("assets/images/sub_logo.png"),
+                child: Container(height: 200.sp, child: Image.asset("assets/images/sub_logo.png")),
               ),
               Text(
                 LocaleKeys.Contact_Us.tr(),
@@ -52,7 +52,7 @@ class _ContactUsState extends State<ContactUs> {
                 height: 30.h,
               ),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 25.w),
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
                 child: TextFields.normalTextField(
                   context,
                   labelText: LocaleKeys.Name.tr(),
@@ -64,7 +64,7 @@ class _ContactUsState extends State<ContactUs> {
                 height: 30.h,
               ),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 25.w),
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
                 child: TextFields.normalTextField(
                   context,
                   labelText: LocaleKeys.Phone.tr(),
@@ -76,19 +76,19 @@ class _ContactUsState extends State<ContactUs> {
                 height: 30.h,
               ),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 25.w),
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
                 child: TextFields.normalTextField(
                   context,
-                  labelText: LocaleKeys.Email.tr(),
+                  labelText: "Email",
                   color: AppColors.white_color,
-                  hintText: LocaleKeys.Email.tr(),
+                  hintText: "Email",
                 ),
               ),
               SizedBox(
                 height: 30.h,
               ),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 25.w),
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
                 child: TextFields.normalTextField(
                   context,
                   maxLength: 10,

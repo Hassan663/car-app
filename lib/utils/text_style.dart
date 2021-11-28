@@ -17,13 +17,13 @@ TextStyle smallGreyText = GoogleFonts.openSans(
 
 TextStyle subtitleGreyText = GoogleFonts.openSans(
   color: AppColors.light_grey_color,
-  fontSize: 20.sp,
+  fontSize: 16.sp,
   fontWeight: FontWeight.w600,
 );
 
 TextStyle subtitleYellowText = GoogleFonts.openSans(
   color: AppColors.yellow_color,
-  fontSize: 20.sp,
+  fontSize: 16.sp,
   fontWeight: FontWeight.w600,
 );
 
@@ -41,7 +41,7 @@ TextStyle smallWhiteText1 = GoogleFonts.openSans(
 
 TextStyle largeGreyText = GoogleFonts.openSans(
   color: Colors.black,
-  fontSize: 30.sp,
+  fontSize: 25.sp,
   fontWeight: FontWeight.bold
   ,
 );

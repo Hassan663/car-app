@@ -55,7 +55,7 @@ class _SettingState extends State<Setting> {
                 ),
               ),
               SizedBox(
-                height: 40.h,
+                height: 20.h,
               ),
               Container(
                 height: height * 0.7,
@@ -150,70 +150,70 @@ class _SettingState extends State<Setting> {
                           ],
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.notifications,
-                            color: AppColors.grey_color,
-                          ),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          Text(
-                            LocaleKeys.Notifications.tr(),
-                            style: largeBlackText,
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 20.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.Notifications.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                  print(isSwitched);
-                                });
-                              },
-                              activeTrackColor: Colors.grey,
-                              activeColor: AppColors.yellow_color,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.App_Notifications.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                  print(isSwitched);
-                                });
-                              },
-                              activeTrackColor: Colors.grey,
-                              activeColor: AppColors.yellow_color,
-                            ),
-                          ],
-                        ),
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Icon(
+                      //       Icons.notifications,
+                      //       color: AppColors.grey_color,
+                      //     ),
+                      //     SizedBox(
+                      //       width: 10.w,
+                      //     ),
+                      //     Text(
+                      //       LocaleKeys.Notifications.tr(),
+                      //       style: largeBlackText,
+                      //     )
+                      //   ],
+                      // ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 20.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.Notifications.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       Switch(
+                      //         value: isSwitched,
+                      //         onChanged: (value) {
+                      //           setState(() {
+                      //             isSwitched = value;
+                      //             print(isSwitched);
+                      //           });
+                      //         },
+                      //         activeTrackColor: Colors.grey,
+                      //         activeColor: AppColors.yellow_color,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.App_Notifications.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       Switch(
+                      //         value: isSwitched,
+                      //         onChanged: (value) {
+                      //           setState(() {
+                      //             isSwitched = value;
+                      //             print(isSwitched);
+                      //           });
+                      //         },
+                      //         activeTrackColor: Colors.grey,
+                      //         activeColor: AppColors.yellow_color,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -340,30 +340,30 @@ class _SettingState extends State<Setting> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.Country.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            CircleAvatar(
-                              maxRadius: 20,
-                              backgroundColor: AppColors.yellow_color,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.chevron_right,
-                                  color: AppColors.white_color,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.Country.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       CircleAvatar(
+                      //         maxRadius: 20,
+                      //         backgroundColor: AppColors.yellow_color,
+                      //         child: IconButton(
+                      //           onPressed: () {},
+                      //           icon: Icon(
+                      //             Icons.chevron_right,
+                      //             color: AppColors.white_color,
+                      //           ),
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

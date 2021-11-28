@@ -22,7 +22,7 @@ class BannerSection extends StatelessWidget {
               style: GoogleFonts.openSans(fontSize: 20.sp, fontWeight: FontWeight.w600),
             )),
             decoration: BoxDecoration(
-                color: Color(0xffF8EDDC),
+                color: Color(0xfffef2e9),
                 borderRadius: BorderRadius.circular(20)),
           ),
           // Positioned(

@@ -36,7 +36,7 @@ class CarCard extends StatelessWidget {
               padding: EdgeInsets.only(right: 25.w),
               child: SizedBox(
                 height: 400.h,
-                width: 300.w,
+                width: 350.w,
                 child: Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
@@ -132,7 +132,7 @@ class CarCard extends StatelessWidget {
                               children: [
                                 SizedBox(
                                   height: 300.h,
-                                  width: 300.w,
+                                  width: 350.w,
                                   child: TabBarView(
                                     children: [
                                       CurrentVisit(

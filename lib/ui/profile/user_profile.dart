@@ -280,7 +280,7 @@ class _UserProfileState extends State<UserProfile> {
                                   ),
                                   CircularButtons(
                                       height: height * 0.05,
-                                      width: 180.w,
+                                      width: 150.w,
                                       text: LocaleKeys.Contact_Us.tr(),
                                       textStyle: smallWhiteText1,
                                       onPressed: () {},
@@ -329,7 +329,7 @@ class _UserProfileState extends State<UserProfile> {
                             ),
                             CircularButtons(
                                 height: height * 0.05,
-                                width: 180.w,
+                                width: 150.w,
                                 text: LocaleKeys.Disclaimer.tr(),
                                 textStyle: smallWhiteText1,
                                 onPressed: () {

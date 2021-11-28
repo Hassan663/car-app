@@ -14,7 +14,7 @@ class Warning extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Color(0xffF8EDDC).withOpacity(0.8),
+      backgroundColor: Color(0xfffef2e9).withOpacity(0.8),
       body: Center(
         child: Container(
           height: height * 0.35,

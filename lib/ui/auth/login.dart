@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
                 height: 60.h,
               ),
               Center(
-                child: Image.asset("assets/images/sub_logo.png"),
+                child: Container( height: 220.sp, child: Image.asset("assets/images/sub_logo.png")),
               ),
               SizedBox(
                 height: 30.h,
@@ -90,10 +90,10 @@ class _LoginState extends State<Login> {
                 style: largeGreyText,
               ),
               SizedBox(
-                height: 60.h,
+                height: 50.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
+                padding: EdgeInsets.symmetric(horizontal: 60.w),
                 child: TextFields.normalTextField(context,
                     labelText: "User Name",
                     controller: _contactController,
@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                 height: 30.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
+                padding: EdgeInsets.symmetric(horizontal: 60.w),
                 child: TextFields.normalTextField(context,
                     labelText: LocaleKeys.Password.tr(),
                     color: AppColors.white_color,
@@ -118,7 +118,7 @@ class _LoginState extends State<Login> {
               ),
               CircularButtons(
                   height: height * 0.06,
-                  width: 210.w,
+                  width: 180.w,
                   text: LocaleKeys.Log_In.tr(),
                   textStyle: smallWhiteText,
                   onPressed: () {

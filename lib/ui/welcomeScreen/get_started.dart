@@ -30,12 +30,12 @@ class _GetStartedState extends State<GetStarted> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 40.h,
+              height: 10.h,
             ),
-            Center(child: Image.asset("assets/images/sub_logo.png")),
-            Center(child: Image.asset("assets/images/boarding_screen.png")),
+            Center(child: Container( height: 250.sp,child: Image.asset("assets/images/sub_logo.png"))),
+            Center(child: Container(height: 200.sp, child: Image.asset("assets/images/boarding_screen.png"))),
             SizedBox(
-              height: 30.h,
+              height: 70.h,
             ),
             Text(
               LocaleKeys.Welcome_to_Apex_Auto_Garage.tr(),
@@ -58,11 +58,11 @@ class _GetStartedState extends State<GetStarted> {
               ),
             ),
             SizedBox(
-              height: 60.h,
+              height: 40.h,
             ),
             CircularButtons(
                 height: height * 0.06,
-                width: 210.w,
+                width: 180.w,
                 text: LocaleKeys.Get_Started.tr(),
                 textStyle: smallWhiteText,
                 onPressed: () {

@@ -256,7 +256,7 @@ class VisitRow extends StatelessWidget {
       children: [
         Icon(
           Icons.check_circle_outline,
-          size: 35,
+          size: 30,
           color: Color(0xffF48129),
         ),
         SizedBox(
@@ -268,14 +268,14 @@ class VisitRow extends StatelessWidget {
               overflow: TextOverflow.clip,
               softWrap: true,
               style: TextStyle(
-                fontSize: 20.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
               )),
         ),
         Spacer(),
         Icon(
           Icons.calendar_today_outlined,
-          color: Color(0xffF48129),size: 18,
+          color: Color(0xffF48129),size: 16.sp,
         ),
         SizedBox(
           width: 8.w,
@@ -283,7 +283,7 @@ class VisitRow extends StatelessWidget {
         Text(
           Trailing,
           style: TextStyle(
-              fontSize: 20.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w400,
               color: Color(0xffF48129)),
         )
