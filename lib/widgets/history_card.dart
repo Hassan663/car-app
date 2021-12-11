@@ -163,7 +163,7 @@ class CustomButton extends StatelessWidget {
           Icons.arrow_forward_outlined,
           color: Color(0xffFFFFFF),
         ),
-        height: 36.h,
+        height: 38.h,
         width: 94.h,
         decoration: BoxDecoration(
             color: Color(0xffF48129),

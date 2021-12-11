@@ -32,7 +32,7 @@ class TextFields {
         hintText: hintText,
         hintStyle: TextStyle(
             color: AppColors.grey_color,
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.w400),
         labelText: labelText,
         //  labelStyle: TextStyle(

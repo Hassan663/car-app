@@ -84,10 +84,10 @@ class _VisitDetailState extends State<VisitDetail> {
                 // Positioned(top: 74.h, left: 33.w, child: Logo(vechile: ,)),
                 Positioned(
                     top: 174.h,
-                    left: 33.w,
+                    left: 25.w,
                     child: Container(
                       height: 660.h,
-                      width: 347,
+                      width: 347.w,
                       child: ListView.builder(
                         itemCount: VisitModel.data.length,
                         itemBuilder: (BuildContext context, int index) =>
@@ -119,7 +119,7 @@ class _VisitDetailState extends State<VisitDetail> {
                                             ),
                                             Container(
                                               height: 560.h,
-                                              width: 347,
+                                              width: 350.w,
                                               child: ListView.builder(
                                                 itemCount:
                                                     vdm!.visitDetail.length,

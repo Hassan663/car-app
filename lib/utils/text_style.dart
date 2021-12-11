@@ -35,7 +35,7 @@ TextStyle smallWhiteText = GoogleFonts.openSans(
 
 TextStyle smallWhiteText1 = GoogleFonts.openSans(
   color: AppColors.white_color,
-  fontSize: 12.sp,
+  fontSize: 15.sp,
   fontWeight: FontWeight.w600,
 );
 

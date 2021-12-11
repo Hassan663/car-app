@@ -38,13 +38,16 @@ class Warning extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Text(
-                LocaleKeys.All_logos_and_brands_are_property_of_their_respective_owners_Logos_and_brand_used_in_thi_pplication_are_for_identification_purposes_only_Use_of_these_logos_and_brands_does_not_imply_endorsement.tr(),
-                textAlign: TextAlign.center,
-                style: GoogleFonts.openSans(
-                    fontSize: 19.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.light_grey_color),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  LocaleKeys.All_logos_and_brands_are_property_of_their_respective_owners_Logos_and_brand_used_in_thi_pplication_are_for_identification_purposes_only_Use_of_these_logos_and_brands_does_not_imply_endorsement.tr(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.openSans(
+                      fontSize: 19.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.light_grey_color),
+                ),
               ),
             ],
           ),

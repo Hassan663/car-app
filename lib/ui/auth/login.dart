@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
@@ -98,7 +99,7 @@ class _LoginState extends State<Login> {
                     labelText: "User Name",
                     controller: _contactController,
                     color: AppColors.white_color,
-                    hintText: "User Name",
+                    hintText: "Enter Mobile No",
                     emptyValidationMessage: "Please Enter User Name"),
               ),
               SizedBox(
@@ -111,16 +112,21 @@ class _LoginState extends State<Login> {
                     color: AppColors.white_color,
                     controller: _passwordController,
                     hintText: "Password",
-                    emptyValidationMessage: "Please Enter password"),
+                    emptyValidationMessage: "Please Enter password"
+                ),
               ),
               SizedBox(
                 height: 38.h,
               ),
               CircularButtons(
                   height: height * 0.06,
-                  width: 180.w,
+                  width: 150.w,
                   text: LocaleKeys.Log_In.tr(),
-                  textStyle: smallWhiteText,
+                  textStyle: GoogleFonts.openSans(
+                    color: AppColors.white_color,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                   onPressed: () {
                     _validateAndSubmitSignup(context);
                   },

@@ -16,7 +16,8 @@ class CircularButtons extends StatelessWidget {
   final Color borderColor;
   final TextStyle textStyle;
   const CircularButtons(
-      {required this.text,
+      {
+      required this.text,
       required this.width,
       required this.height,
       required this.textStyle,
@@ -54,9 +55,10 @@ class FloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       child: Image.asset('assets/images/phone.png'),
-      onPressed: () {
-        AppRoutes.push(context, ContactUs());
-      },
+      onPressed: () => launch("tel://+971521273517"),
+      // onPressed: () {
+      //   AppRoutes.push(context, ContactUs());
+      // },
       backgroundColor: Color(0xffF48129),
     );
   }
@@ -68,9 +70,9 @@ class FloatingButton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     openwhatsapp() async {
-      var whatsapp = "+919144040888";
+      var whatsapp = "+971521273517";
       var whatsappURl_android =
-          "whatsapp://send?phone=" + whatsapp + "&text=hello";
+          "whatsapp://send?phone=" + whatsapp + "&text=Hey!! I would like to know about my car status.";
       var whatappURL_ios = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
       // if(Platform.isIOS){
       //   // for iOS phone only
@@ -88,7 +90,7 @@ class FloatingButton1 extends StatelessWidget {
         await launch(whatsappURl_android);
       } else {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
+            .showSnackBar(SnackBar(content: new Text("whatsapp not installed")));
       }
     }
 

@@ -35,7 +35,7 @@ class CarCard extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(right: 25.w),
               child: SizedBox(
-                height: 400.h,
+                height: 420.h,
                 width: 350.w,
                 child: Card(
                   elevation: 5,

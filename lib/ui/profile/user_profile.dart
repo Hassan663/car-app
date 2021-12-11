@@ -1,5 +1,6 @@
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/contact_us/warning.dart';
+import 'package:car_app/ui/contact_us/contact_us.dart';
 import 'package:car_app/ui/home/home_screen/constants.dart';
 import 'package:car_app/utils/colors.dart';
 import 'package:car_app/utils/dashbordModel.dart';
@@ -251,28 +252,88 @@ class _UserProfileState extends State<UserProfile> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(FontAwesomeIcons.facebookF,
+                                      IconButton(
+                                        padding: EdgeInsets.zero,
+                                        constraints: BoxConstraints(),
+                                        icon: Icon(FontAwesomeIcons.facebook,
                                           color: AppColors.grey_color),
+                                          onPressed: () async {
+                                              const url = 'https://www.facebook.com/aag.dubai';
+                                              if (await canLaunch(url)) {
+                                              await launch(url);
+                                              } else {
+                                              throw 'Could not launch $url';
+                                              }
+                                            },
+                                          ),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.twitter,
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.twitter,
                                           color: AppColors.grey_color),
+                                          onPressed: () async {
+                                              const url = 'https://twitter.com/AAG_UAE';
+                                              if (await canLaunch(url)) {
+                                              await launch(url);
+                                              } else {
+                                              throw 'Could not launch $url';
+                                              }
+                                            }
+                                          ),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.linkedinIn,
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.linkedinIn,
                                           color: AppColors.grey_color),
+                                          onPressed: () async {
+                                              const url = 'https://www.linkedin.com/company/aag-uae/';
+                                              if (await canLaunch(url)) {
+                                              await launch(url);
+                                              } else {
+                                              throw 'Could not launch $url';
+                                              }
+                                            }
+                                          ),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.instagram,
+                              IconButton(
+                                  padding: EdgeInsets.zero,
+                                  constraints: BoxConstraints(),
+                                  icon: Icon(FontAwesomeIcons.instagram,
                                           color: AppColors.grey_color),
+                                          onPressed: () async {
+                                              const url = 'https://www.instagram.com/aag_uae';
+                                              if (await canLaunch(url)) {
+                                              await launch(url);
+                                              } else {
+                                              throw 'Could not launch $url';
+                                              }
+                                            }
+                                          ),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.youtube,
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.youtube,
                                           color: AppColors.grey_color),
+                                          onPressed: () async {
+                                              const url = 'https://www.youtube.com/channel/UCzqoKK9i9NmuTT4Kix85yEg';
+                                              if (await canLaunch(url)) {
+                                              await launch(url);
+                                              } else {
+                                              throw 'Could not launch $url';
+                                              }
+                                            }
+                                          ),
                                     ],
                                   ),
                                   SizedBox(
@@ -283,40 +344,8 @@ class _UserProfileState extends State<UserProfile> {
                                       width: 150.w,
                                       text: LocaleKeys.Contact_Us.tr(),
                                       textStyle: smallWhiteText1,
-                                      onPressed: () {},
-                                      backgroundColor: AppColors.yellow_color,
-                                      textColor: Colors.white,
-                                      borderColor: AppColors.yellow_color),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CircularButtons(
-                                      height: height * 0.05,
-                                      width: 150.w,
-                                      text: LocaleKeys.Log_Out.tr(),
-                                      textStyle: smallWhiteText1,
                                       onPressed: () {
-                                        AppRoutes.push(context, Warning());
-                                      },
-                                      backgroundColor: AppColors.yellow_color,
-                                      textColor: Colors.white,
-                                      borderColor: AppColors.yellow_color),
-                                  CircularButtons(
-                                      height: height * 0.05,
-                                      width: 150.w,
-                                      text: LocaleKeys.Change_Password.tr(),
-                                      textStyle: smallWhiteText1,
-                                      onPressed: () {
-                                        AppRoutes.push(context, Warning());
+                                        AppRoutes.push(context, ContactUs());
                                       },
                                       backgroundColor: AppColors.yellow_color,
                                       textColor: Colors.white,
@@ -327,6 +356,40 @@ class _UserProfileState extends State<UserProfile> {
                             SizedBox(
                               height: 20.h,
                             ),
+                            // Padding(
+                            //   padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            //   child: Row(
+                            //     mainAxisAlignment:
+                            //         MainAxisAlignment.spaceBetween,
+                            //     children: [
+                            //       CircularButtons(
+                            //           height: height * 0.05,
+                            //           width: 150.w,
+                            //           text: LocaleKeys.Log_Out.tr(),
+                            //           textStyle: smallWhiteText1,
+                            //           onPressed: () {
+                            //             AppRoutes.push(context, Warning());
+                            //           },
+                            //           backgroundColor: AppColors.yellow_color,
+                            //           textColor: Colors.white,
+                            //           borderColor: AppColors.yellow_color),
+                            //       CircularButtons(
+                            //           height: height * 0.05,
+                            //           width: 150.w,
+                            //           text: LocaleKeys.Change_Password.tr(),
+                            //           textStyle: smallWhiteText1,
+                            //           onPressed: () {
+                            //             AppRoutes.push(context, Warning());
+                            //           },
+                            //           backgroundColor: AppColors.yellow_color,
+                            //           textColor: Colors.white,
+                            //           borderColor: AppColors.yellow_color),
+                            //     ],
+                            //   ),
+                            // ),
+                            // SizedBox(
+                            //   height: 20.h,
+                            // ),
                             CircularButtons(
                                 height: height * 0.05,
                                 width: 150.w,
