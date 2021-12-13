@@ -195,7 +195,7 @@ class CardTiles extends StatelessWidget {
       height: 33.h,
       child: ListTile(
         minLeadingWidth: 12.85.w,
-        leading: Icon(iconData),
+        leading: Icon(iconData,),
         title: Text(
           title,
           style: GoogleFonts.openSans(
