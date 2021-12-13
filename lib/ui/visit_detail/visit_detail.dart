@@ -84,10 +84,10 @@ class _VisitDetailState extends State<VisitDetail> {
                 // Positioned(top: 74.h, left: 33.w, child: Logo(vechile: ,)),
                 Positioned(
                     top: 174.h,
-                    left: 33.w,
+                    left: 25.w,
                     child: Container(
                       height: 660.h,
-                      width: 347,
+                      width: 347.w,
                       child: ListView.builder(
                         itemCount: VisitModel.data.length,
                         itemBuilder: (BuildContext context, int index) =>
@@ -111,15 +111,15 @@ class _VisitDetailState extends State<VisitDetail> {
                                             Text(
                                               LocaleKeys.Visit_Detail.tr(),
                                               style: GoogleFonts.openSans(
-                                                  fontSize: 25.sp,
-                                                  fontWeight: FontWeight.w700),
+                                                  fontSize: 30.sp,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                             SizedBox(
                                               height: 26.h,
                                             ),
                                             Container(
                                               height: 560.h,
-                                              width: 347,
+                                              width: 350.w,
                                               child: ListView.builder(
                                                 itemCount:
                                                     vdm!.visitDetail.length,
@@ -256,7 +256,7 @@ class VisitRow extends StatelessWidget {
       children: [
         Icon(
           Icons.check_circle_outline,
-          size: 35,
+          size: 30,
           color: Color(0xffF48129),
         ),
         SizedBox(
@@ -268,14 +268,14 @@ class VisitRow extends StatelessWidget {
               overflow: TextOverflow.clip,
               softWrap: true,
               style: TextStyle(
-                fontSize: 11.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
               )),
         ),
         Spacer(),
         Icon(
           Icons.calendar_today_outlined,
-          color: Color(0xffF48129),
+          color: Color(0xffF48129),size: 16.sp,
         ),
         SizedBox(
           width: 8.w,
@@ -283,7 +283,7 @@ class VisitRow extends StatelessWidget {
         Text(
           Trailing,
           style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w400,
               color: Color(0xffF48129)),
         )

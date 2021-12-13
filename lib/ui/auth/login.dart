@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:car_app/translations/locale_keys.g.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
@@ -80,7 +81,7 @@ class _LoginState extends State<Login> {
                 height: 60.h,
               ),
               Center(
-                child: Image.asset("assets/images/sub_logo.png"),
+                child: Container( height: 220.sp, child: Image.asset("assets/images/sub_logo.png")),
               ),
               SizedBox(
                 height: 30.h,
@@ -90,37 +91,42 @@ class _LoginState extends State<Login> {
                 style: largeGreyText,
               ),
               SizedBox(
-                height: 60.h,
+                height: 50.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 60.w),
                 child: TextFields.normalTextField(context,
                     labelText: "User Name",
                     controller: _contactController,
                     color: AppColors.white_color,
-                    hintText: "User Name",
+                    hintText: "Enter Mobile No",
                     emptyValidationMessage: "Please Enter User Name"),
               ),
               SizedBox(
                 height: 30.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 60.w),
                 child: TextFields.normalTextField(context,
                     labelText: LocaleKeys.Password.tr(),
                     color: AppColors.white_color,
                     controller: _passwordController,
                     hintText: "Password",
-                    emptyValidationMessage: "Please Enter password"),
+                    emptyValidationMessage: "Please Enter password"
+                ),
               ),
               SizedBox(
                 height: 38.h,
               ),
               CircularButtons(
                   height: height * 0.06,
-                  width: 210.w,
+                  width: 150.w,
                   text: LocaleKeys.Log_In.tr(),
-                  textStyle: smallWhiteText,
+                  textStyle: GoogleFonts.openSans(
+                    color: AppColors.white_color,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                   onPressed: () {
                     _validateAndSubmitSignup(context);
                   },

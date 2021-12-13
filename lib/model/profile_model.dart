@@ -87,9 +87,9 @@ class Vechile {
         carId: json["car_id"],
         carMakeName: json["car_make_name"],
         carMakeLogo: json["car_make_logo"],
-        carModelName: json["car_model_name"],
+        carModelName: "Model: "+json["car_model_name"],
         carModelImage: json["car_model_image"],
-        plateNo: json["plate_no"],
+        plateNo: "Plate No: "+json["plate_no"],
         vechileCurrentVisitData:
             VechileTVisitData.fromJson(json["vechile_current_visit_data"]),
         vechileLastVisitData:

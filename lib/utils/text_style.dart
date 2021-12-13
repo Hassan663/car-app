@@ -11,38 +11,39 @@ TextStyle welcomeText = GoogleFonts.openSans(
 
 TextStyle smallGreyText = GoogleFonts.openSans(
   color: AppColors.light_grey_color,
-  fontSize: 16.sp,
+  fontSize: 20.sp,
   fontWeight: FontWeight.w400,
 );
 
 TextStyle subtitleGreyText = GoogleFonts.openSans(
   color: AppColors.light_grey_color,
-  fontSize: 15.sp,
+  fontSize: 16.sp,
   fontWeight: FontWeight.w600,
 );
 
 TextStyle subtitleYellowText = GoogleFonts.openSans(
   color: AppColors.yellow_color,
-  fontSize: 15.sp,
+  fontSize: 16.sp,
   fontWeight: FontWeight.w600,
 );
 
 TextStyle smallWhiteText = GoogleFonts.openSans(
   color: AppColors.white_color,
-  fontSize: 18.sp,
+  fontSize: 22.sp,
   fontWeight: FontWeight.w600,
 );
 
 TextStyle smallWhiteText1 = GoogleFonts.openSans(
   color: AppColors.white_color,
-  fontSize: 12.sp,
+  fontSize: 15.sp,
   fontWeight: FontWeight.w600,
 );
 
 TextStyle largeGreyText = GoogleFonts.openSans(
   color: Colors.black,
   fontSize: 25.sp,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.bold
+  ,
 );
 
 TextStyle smallBlackText = GoogleFonts.openSans(

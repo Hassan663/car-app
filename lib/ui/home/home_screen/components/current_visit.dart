@@ -19,7 +19,7 @@ class CurrentVisit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffF8EDDC),
+      color: Color(0xfffef2e9),
       width: 287.w,
       child: SingleChildScrollView(
         child: Column(

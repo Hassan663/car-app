@@ -1,5 +1,7 @@
 import 'package:car_app/translations/locale_keys.g.dart';
 import 'package:car_app/ui/contact_us/warning.dart';
+import 'package:car_app/ui/contact_us/contact_us.dart';
+import 'package:car_app/ui/home/home_screen/constants.dart';
 import 'package:car_app/utils/colors.dart';
 import 'package:car_app/utils/dashbordModel.dart';
 import 'package:car_app/utils/routes.dart';
@@ -60,7 +62,7 @@ class _UserProfileState extends State<UserProfile> {
                         },
                         icon: Icon(
                           Icons.chevron_left,
-                          size: 32.sp,
+                          size: 40.sp,
                         ))),
                 //Positioned(top: 97.h, left: 33.w, child: Logo()),
                 Positioned(
@@ -72,7 +74,7 @@ class _UserProfileState extends State<UserProfile> {
                         children: [
                           Text(
                             DashBordModel.customerData!.name.toString(),
-                            style: largeGreyText,
+                            style: kStylingHeader,
                           )
                         ])),
                 Positioned(
@@ -117,7 +119,7 @@ class _UserProfileState extends State<UserProfile> {
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.car,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,
@@ -141,7 +143,7 @@ class _UserProfileState extends State<UserProfile> {
                                 children: [
                                   Icon(
                                     FontAwesomeIcons.tools,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,
@@ -168,7 +170,7 @@ class _UserProfileState extends State<UserProfile> {
                                   Icon(
                                     FontAwesomeIcons.envelope,
                                     color: Colors.black,
-                                    size: 30,
+                                    size: 17,
                                   ),
 
                                   //Image.asset("assets/images/email.png"),
@@ -198,7 +200,7 @@ class _UserProfileState extends State<UserProfile> {
                                   Icon(
                                     FontAwesomeIcons.phone,
                                     color: Colors.black,
-                                    size: 30,
+                                    size: 17,
                                   ),
                                   SizedBox(
                                     width: 15.w,
@@ -250,28 +252,90 @@ class _UserProfileState extends State<UserProfile> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(FontAwesomeIcons.facebookF,
-                                          color: AppColors.grey_color),
+                                      IconButton(
+                                        padding: EdgeInsets.zero,
+                                        constraints: BoxConstraints(),
+                                        icon: Icon(FontAwesomeIcons.facebook,
+                                            color: AppColors.grey_color),
+                                        onPressed: () async {
+                                          const url =
+                                              'https://www.facebook.com/aag.dubai';
+                                          if (await canLaunch(url)) {
+                                            await launch(url);
+                                          } else {
+                                            throw 'Could not launch $url';
+                                          }
+                                        },
+                                      ),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.twitter,
-                                          color: AppColors.grey_color),
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.twitter,
+                                              color: AppColors.grey_color),
+                                          onPressed: () async {
+                                            const url =
+                                                'https://twitter.com/AAG_UAE';
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          }),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.linkedinIn,
-                                          color: AppColors.grey_color),
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(
+                                              FontAwesomeIcons.linkedinIn,
+                                              color: AppColors.grey_color),
+                                          onPressed: () async {
+                                            const url =
+                                                'https://www.linkedin.com/company/aag-uae/';
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          }),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.instagram,
-                                          color: AppColors.grey_color),
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.instagram,
+                                              color: AppColors.grey_color),
+                                          onPressed: () async {
+                                            const url =
+                                                'https://www.instagram.com/aag_uae';
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          }),
                                       SizedBox(
                                         width: 10.w,
                                       ),
-                                      Icon(FontAwesomeIcons.youtube,
-                                          color: AppColors.grey_color),
+                                      IconButton(
+                                          padding: EdgeInsets.zero,
+                                          constraints: BoxConstraints(),
+                                          icon: Icon(FontAwesomeIcons.youtube,
+                                              color: AppColors.grey_color),
+                                          onPressed: () async {
+                                            const url =
+                                                'https://www.youtube.com/channel/UCzqoKK9i9NmuTT4Kix85yEg';
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          }),
                                     ],
                                   ),
                                   SizedBox(
@@ -279,43 +343,11 @@ class _UserProfileState extends State<UserProfile> {
                                   ),
                                   CircularButtons(
                                       height: height * 0.05,
-                                      width: 180.w,
+                                      width: 150.w,
                                       text: LocaleKeys.Contact_Us.tr(),
                                       textStyle: smallWhiteText1,
-                                      onPressed: () {},
-                                      backgroundColor: AppColors.yellow_color,
-                                      textColor: Colors.white,
-                                      borderColor: AppColors.yellow_color),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CircularButtons(
-                                      height: height * 0.05,
-                                      width: 150.w,
-                                      text: LocaleKeys.Log_Out.tr(),
-                                      textStyle: smallWhiteText1,
                                       onPressed: () {
-                                        AppRoutes.push(context, Warning());
-                                      },
-                                      backgroundColor: AppColors.yellow_color,
-                                      textColor: Colors.white,
-                                      borderColor: AppColors.yellow_color),
-                                  CircularButtons(
-                                      height: height * 0.05,
-                                      width: 150.w,
-                                      text: LocaleKeys.Change_Password.tr(),
-                                      textStyle: smallWhiteText1,
-                                      onPressed: () {
-                                        AppRoutes.push(context, Warning());
+                                        AppRoutes.push(context, ContactUs());
                                       },
                                       backgroundColor: AppColors.yellow_color,
                                       textColor: Colors.white,
@@ -326,13 +358,104 @@ class _UserProfileState extends State<UserProfile> {
                             SizedBox(
                               height: 20.h,
                             ),
+                            // Padding(
+                            //   padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            //   child: Row(
+                            //     mainAxisAlignment:
+                            //         MainAxisAlignment.spaceBetween,
+                            //     children: [
+                            //       CircularButtons(
+                            //           height: height * 0.05,
+                            //           width: 150.w,
+                            //           text: LocaleKeys.Log_Out.tr(),
+                            //           textStyle: smallWhiteText1,
+                            //           onPressed: () {
+                            //             AppRoutes.push(context, Warning());
+                            //           },
+                            //           backgroundColor: AppColors.yellow_color,
+                            //           textColor: Colors.white,
+                            //           borderColor: AppColors.yellow_color),
+                            //       CircularButtons(
+                            //           height: height * 0.05,
+                            //           width: 150.w,
+                            //           text: LocaleKeys.Change_Password.tr(),
+                            //           textStyle: smallWhiteText1,
+                            //           onPressed: () {
+                            //             AppRoutes.push(context, Warning());
+                            //           },
+                            //           backgroundColor: AppColors.yellow_color,
+                            //           textColor: Colors.white,
+                            //           borderColor: AppColors.yellow_color),
+                            //     ],
+                            //   ),
+                            // ),
+                            // SizedBox(
+                            //   height: 20.h,
+                            // ),
                             CircularButtons(
                                 height: height * 0.05,
-                                width: 180.w,
+                                width: 150.w,
                                 text: LocaleKeys.Disclaimer.tr(),
                                 textStyle: smallWhiteText1,
                                 onPressed: () {
-                                  AppRoutes.push(context, Warning());
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) => AlertDialog(
+                                      contentPadding: EdgeInsets.all(1),
+                                      content: Container(
+                                        height: height * 0.45,
+                                        width: width * 0.90,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Icon(
+                                              Icons.warning,
+                                              size: 40.sp,
+                                            ),
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Text(
+                                              LocaleKeys.Disclaimer.tr(),
+                                              style: largeBlackText,
+                                            ),
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(15.0),
+                                              child: Text(
+                                                LocaleKeys
+                                                        .All_logos_and_brands_are_property_of_their_respective_owners_Logos_and_brand_used_in_thi_pplication_are_for_identification_purposes_only_Use_of_these_logos_and_brands_does_not_imply_endorsement
+                                                    .tr(),
+                                                textAlign: TextAlign.center,
+                                                style: GoogleFonts.openSans(
+                                                    fontSize: 19.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: AppColors
+                                                        .light_grey_color),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey,
+                                              spreadRadius: 5,
+                                              blurRadius: 7,
+                                              //offset: Offset(0, 6), // changes position of shadow
+                                            ),
+                                          ],
+                                          color: AppColors.white_color,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                  //AppRoutes.push(context, Warning());
                                 },
                                 backgroundColor: AppColors.yellow_color,
                                 textColor: Colors.white,

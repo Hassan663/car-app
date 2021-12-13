@@ -1,5 +1,7 @@
 import 'package:car_app/translations/locale_keys.g.dart';
+import 'package:car_app/ui/auth/forget_password.dart';
 import 'package:car_app/utils/colors.dart';
+import 'package:car_app/utils/routes.dart';
 import 'package:car_app/utils/text_style.dart';
 import 'package:car_app/widgets/bottom_bar.dart';
 import 'package:car_app/widgets/buttons.dart';
@@ -55,10 +57,10 @@ class _SettingState extends State<Setting> {
                 ),
               ),
               SizedBox(
-                height: 40.h,
+                height: 20.h,
               ),
               Container(
-                height: height * 0.7,
+                height: height * 0.8,
                 width: width,
                 decoration: new BoxDecoration(
                     // changes position of shadow
@@ -102,30 +104,30 @@ class _SettingState extends State<Setting> {
                       SizedBox(
                         height: 20.h,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.Edit_Profile.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            CircleAvatar(
-                              maxRadius: 20,
-                              backgroundColor: AppColors.yellow_color,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.chevron_right,
-                                  color: AppColors.white_color,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.Edit_Profile.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       CircleAvatar(
+                      //         maxRadius: 20,
+                      //         backgroundColor: AppColors.yellow_color,
+                      //         child: IconButton(
+                      //           onPressed: () {},
+                      //           icon: Icon(
+                      //             Icons.chevron_right,
+                      //             color: AppColors.white_color,
+                      //           ),
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                       Padding(
                         padding: EdgeInsets.only(
                             left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
@@ -140,7 +142,9 @@ class _SettingState extends State<Setting> {
                               maxRadius: 20,
                               backgroundColor: AppColors.yellow_color,
                               child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  AppRoutes.push(context, ForgetPassword());
+                                },
                                 icon: Icon(
                                   Icons.chevron_right,
                                   color: AppColors.white_color,
@@ -150,70 +154,70 @@ class _SettingState extends State<Setting> {
                           ],
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.notifications,
-                            color: AppColors.grey_color,
-                          ),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          Text(
-                            LocaleKeys.Notifications.tr(),
-                            style: largeBlackText,
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 20.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.Notifications.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                  print(isSwitched);
-                                });
-                              },
-                              activeTrackColor: Colors.grey,
-                              activeColor: AppColors.yellow_color,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.App_Notifications.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            Switch(
-                              value: isSwitched,
-                              onChanged: (value) {
-                                setState(() {
-                                  isSwitched = value;
-                                  print(isSwitched);
-                                });
-                              },
-                              activeTrackColor: Colors.grey,
-                              activeColor: AppColors.yellow_color,
-                            ),
-                          ],
-                        ),
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Icon(
+                      //       Icons.notifications,
+                      //       color: AppColors.grey_color,
+                      //     ),
+                      //     SizedBox(
+                      //       width: 10.w,
+                      //     ),
+                      //     Text(
+                      //       LocaleKeys.Notifications.tr(),
+                      //       style: largeBlackText,
+                      //     )
+                      //   ],
+                      // ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 20.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.Notifications.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       Switch(
+                      //         value: isSwitched,
+                      //         onChanged: (value) {
+                      //           setState(() {
+                      //             isSwitched = value;
+                      //             print(isSwitched);
+                      //           });
+                      //         },
+                      //         activeTrackColor: Colors.grey,
+                      //         activeColor: AppColors.yellow_color,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.App_Notifications.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       Switch(
+                      //         value: isSwitched,
+                      //         onChanged: (value) {
+                      //           setState(() {
+                      //             isSwitched = value;
+                      //             print(isSwitched);
+                      //           });
+                      //         },
+                      //         activeTrackColor: Colors.grey,
+                      //         activeColor: AppColors.yellow_color,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -289,6 +293,7 @@ class _SettingState extends State<Setting> {
                                                       onPressed: () async {
                                                         await context.setLocale(
                                                             Locale('en'));
+                                                        AppRoutes.pop(context);
                                                       },
                                                       width:
                                                           MediaQuery.of(context)
@@ -310,6 +315,7 @@ class _SettingState extends State<Setting> {
                                                       onPressed: () async {
                                                         await context.setLocale(
                                                             Locale('ar'));
+                                                        AppRoutes.pop(context);
                                                       },
                                                       width:
                                                           MediaQuery.of(context)
@@ -340,30 +346,30 @@ class _SettingState extends State<Setting> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              LocaleKeys.Country.tr(),
-                              style: subtitleGreyText,
-                            ),
-                            CircleAvatar(
-                              maxRadius: 20,
-                              backgroundColor: AppColors.yellow_color,
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.chevron_right,
-                                  color: AppColors.white_color,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.only(
+                      //       left: 20.w, right: 20.w, top: 10.h, bottom: 10.h),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Text(
+                      //         LocaleKeys.Country.tr(),
+                      //         style: subtitleGreyText,
+                      //       ),
+                      //       CircleAvatar(
+                      //         maxRadius: 20,
+                      //         backgroundColor: AppColors.yellow_color,
+                      //         child: IconButton(
+                      //           onPressed: () {},
+                      //           icon: Icon(
+                      //             Icons.chevron_right,
+                      //             color: AppColors.white_color,
+                      //           ),
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

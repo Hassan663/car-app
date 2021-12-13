@@ -42,7 +42,7 @@ class _ContactUsState extends State<ContactUs> {
                 height: 60.h,
               ),
               Center(
-                child: Image.asset("assets/images/sub_logo.png"),
+                child: Container(height: 200.sp, child: Image.asset("assets/images/sub_logo.png")),
               ),
               Text(
                 LocaleKeys.Contact_Us.tr(),
@@ -51,39 +51,51 @@ class _ContactUsState extends State<ContactUs> {
               SizedBox(
                 height: 30.h,
               ),
-              TextFields.normalTextField(
-                context,
-                labelText: LocaleKeys.Name.tr(),
-                color: AppColors.white_color,
-                hintText: LocaleKeys.Name.tr(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
+                child: TextFields.normalTextField(
+                  context,
+                  labelText: LocaleKeys.Name.tr(),
+                  color: AppColors.white_color,
+                  hintText: LocaleKeys.Name.tr(),
+                ),
               ),
               SizedBox(
                 height: 30.h,
               ),
-              TextFields.normalTextField(
-                context,
-                labelText: LocaleKeys.Phone.tr(),
-                color: AppColors.white_color,
-                hintText: LocaleKeys.Phone.tr(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
+                child: TextFields.normalTextField(
+                  context,
+                  labelText: LocaleKeys.Phone.tr(),
+                  color: AppColors.white_color,
+                  hintText: LocaleKeys.Phone.tr(),
+                ),
               ),
               SizedBox(
                 height: 30.h,
               ),
-              TextFields.normalTextField(
-                context,
-                labelText: LocaleKeys.Email.tr(),
-                color: AppColors.white_color,
-                hintText: LocaleKeys.Email.tr(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
+                child: TextFields.normalTextField(
+                  context,
+                  labelText: "Email",
+                  color: AppColors.white_color,
+                  hintText: "Email",
+                ),
               ),
               SizedBox(
                 height: 30.h,
               ),
-              TextFields.normalTextField(
-                context,
-                maxLength: 10,
-                labelText: LocaleKeys.Comment.tr(),
-                color: AppColors.white_color,
-                hintText: LocaleKeys.Comment.tr(),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 50.w),
+                child: TextFields.normalTextField(
+                  context,
+                  maxLength: 10,
+                  labelText: LocaleKeys.Comment.tr(),
+                  color: AppColors.white_color,
+                  hintText: LocaleKeys.Comment.tr(),
+                ),
               ),
               SizedBox(
                 height: 50.h,
